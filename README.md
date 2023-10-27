@@ -6,3 +6,4 @@ Given data from an E-Commerce site, this app will allow you to see all of the pr
 GitHub Link https://github.com/ckietzm2/E-Commerce-App
 
 Video Link
+[Untitled_ Oct 27, 2023 3_57 PM.webm](https://github.com/ckietzm2/E-Commerce-App/assets/143734933/cd767545-1041-496b-8593-fe5b208b4745)
