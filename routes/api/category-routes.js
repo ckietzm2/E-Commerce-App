@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id, {
       include: [{ model: Product }],
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
       return;
     }
 
-    res.status(200).json(categoryDataData);
+    res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -33,16 +33,14 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const categoryData = await Category.create({
-      product_id: req.body.product_id,
-    });
+    const categoryData = await Category.create(req.body);
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.put('/', async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id);
 
@@ -62,7 +60,7 @@ router.put('/', async (req, res) => {
   }
 });
 
-router.delete('/', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id);
 
